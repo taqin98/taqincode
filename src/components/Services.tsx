@@ -27,7 +27,7 @@ export default function Services() {
       </div>
       <h2 className="font-serif text-[clamp(2.2rem,3.8vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.025em] reveal">
         What I{" "}
-        <em className="not-italic italic text-[var(--color-accent)] font-light">
+        <em className="italic text-[var(--color-accent)] font-light">
           offer
         </em>
       </h2>

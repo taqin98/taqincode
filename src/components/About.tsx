@@ -11,7 +11,7 @@ export default function About() {
         <div className="flex flex-col">
           <h2 className="font-serif text-[clamp(2.2rem,3.8vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.025em] reveal">
             Code that<br />
-            <em className="not-italic italic text-[var(--color-accent)] font-light">works.</em>
+            <em className="italic text-[var(--color-accent)] font-light">works.</em>
           </h2>
           <p className="text-[1rem] text-[var(--color-text2)] leading-[1.85] font-light mb-[1rem] mt-[2rem] reveal">
             I&apos;m Taqin, a web developer based in Semarang, Central Java,

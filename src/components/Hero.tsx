@@ -32,7 +32,7 @@ export default function Hero() {
 
         <h1 className="font-serif text-[clamp(3.8rem,7.5vw,7.8rem)] font-black leading-[0.93] tracking-[-0.035em] mb-[2rem] opacity-0 animate-fade-up" style={{ animationDelay: '0.25s' }}>
           Fullstack<br />
-          <em className="not-italic italic text-[var(--color-accent)] font-light">Developer</em><br />
+          <em className="italic text-[var(--color-accent)] font-light">Developer</em><br />
           who <span className="text-transparent [-webkit-text-stroke:1.5px_var(--color-text2)]">ships.</span>
         </h1>
 

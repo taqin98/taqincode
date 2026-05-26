@@ -12,7 +12,7 @@ export default function Contact() {
 
       <h2 className="font-serif text-[clamp(3rem,6vw,6rem)] font-black tracking-[-0.035em] leading-[0.95] mb-[1.75rem] reveal">
         Let&apos;s<br />
-        <em className="not-italic italic text-[var(--color-accent)] font-light">
+        <em className="italic text-[var(--color-accent)] font-light">
           build
         </em>
         <br />
