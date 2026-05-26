@@ -8,8 +8,10 @@ export default function CustomCursor() {
   useEffect(() => {
     const isHoverable = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
     setCanUseCustomCursor(isHoverable);
+  }, []);
 
-    if (!isHoverable) return;
+  useEffect(() => {
+    if (!canUseCustomCursor) return;
 
     const cur = document.getElementById("cur");
     const curRing = document.getElementById("curRing");
@@ -69,7 +71,7 @@ export default function CustomCursor() {
       // To be completely clean, we should remove event listeners from individual elements,
       // but since they are attached directly, observer handles new ones.
     };
-  }, []);
+  }, [canUseCustomCursor]);
 
   if (!canUseCustomCursor) return null;
 
