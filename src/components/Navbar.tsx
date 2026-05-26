@@ -19,7 +19,7 @@ export default function Navbar() {
   return (
     <>
       <a
-        className="fixed left-4 -top-20 z-[10000] bg-[var(--color-accent)] text-black py-[0.7rem] px-4 rounded-full font-[family-name:var(--font-mono-custom)] text-[0.75rem] no-underline transition-[top] duration-200 focus:top-4"
+        className="fixed left-4 -top-20 z-[10000] bg-[var(--color-accent)] text-black py-[0.7rem] px-4 rounded-full font-mono text-[0.75rem] no-underline transition-[top] duration-200 focus:top-4"
         href="#projects"
       >
         Skip to projects
@@ -35,13 +35,13 @@ export default function Navbar() {
       >
         <Link
           href="#"
-          className="font-[family-name:var(--font-disp)] text-[1.5rem] font-black text-[var(--color-text-main)] no-underline tracking-[-0.03em] transition-opacity duration-200 hover:opacity-75"
+          className="font-serif text-[1.5rem] font-black text-[var(--color-text-main)] no-underline tracking-[-0.03em] transition-opacity duration-200 hover:opacity-75"
         >
           TQ<span className="text-[var(--color-accent)]">.</span>
         </Link>
 
         <button
-          className="hidden max-[900px]:inline-flex items-center justify-center w-[42px] h-[42px] rounded-full border border-[var(--color-border2)] bg-[rgba(17,18,25,0.86)] text-[var(--color-text-main)] font-[family-name:var(--font-mono-custom)] cursor-pointer"
+          className="hidden max-[900px]:inline-flex items-center justify-center w-[42px] h-[42px] rounded-full border border-[var(--color-border2)] bg-[rgba(17,18,25,0.86)] text-[var(--color-text-main)] font-mono cursor-pointer"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Open navigation"
           aria-expanded={menuOpen}
@@ -61,7 +61,7 @@ export default function Navbar() {
                 <Link
                   href={`#${item}`}
                   onClick={() => setMenuOpen(false)}
-                  className="font-[family-name:var(--font-mono-custom)] text-[0.73rem] text-[var(--color-text2)] no-underline tracking-[0.06em] transition-colors duration-200 hover:text-[var(--color-text-main)] max-[900px]:block max-[900px]:py-[0.85rem] max-[900px]:px-[0.8rem] max-[900px]:text-[0.78rem]"
+                  className="font-mono text-[0.73rem] text-[var(--color-text2)] no-underline tracking-[0.06em] transition-colors duration-200 hover:text-[var(--color-text-main)] max-[900px]:block max-[900px]:py-[0.85rem] max-[900px]:px-[0.8rem] max-[900px]:text-[0.78rem]"
                 >
                   {item}
                 </Link>
@@ -72,7 +72,7 @@ export default function Navbar() {
 
         <a
           href="mailto:taqin.juni.or56@gmail.com"
-          className="font-[family-name:var(--font-mono-custom)] text-[0.73rem] bg-[var(--color-accent)] text-black py-[0.55rem] px-[1.4rem] rounded-full no-underline font-medium tracking-[0.04em] transition-all duration-200 hover:opacity-85 hover:scale-97 max-[900px]:hidden"
+          className="font-mono text-[0.73rem] bg-[var(--color-accent)] text-black py-[0.55rem] px-[1.4rem] rounded-full no-underline font-medium tracking-[0.04em] transition-all duration-200 hover:opacity-85 hover:scale-97 max-[900px]:hidden"
         >
           Hire Me →
         </a>

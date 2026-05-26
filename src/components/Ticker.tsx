@@ -29,7 +29,7 @@ export default function Ticker() {
         {displayItems.map((t, index) => (
           <span
             key={index}
-            className="flex items-center gap-[0.6rem] font-[family-name:var(--font-mono-custom)] text-[0.73rem] text-[var(--color-text3)] whitespace-nowrap tracking-[0.05em]"
+            className="flex items-center gap-[0.6rem] font-mono text-[0.73rem] text-[var(--color-text3)] whitespace-nowrap tracking-[0.05em]"
           >
             <span className="text-[var(--color-accent)] text-[0.85rem]">✦</span>{" "}
             {t}

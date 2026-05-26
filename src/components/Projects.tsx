@@ -55,10 +55,10 @@ export default function Projects() {
       className="py-[7rem] px-[3.5rem] border-t border-[var(--color-border-main)] max-[900px]:py-[5rem] max-[900px]:px-[1.5rem]"
     >
       <div className="mb-[3.5rem] reveal">
-        <div className="font-[family-name:var(--font-mono-custom)] text-[0.68rem] text-[var(--color-accent)] tracking-[0.18em] uppercase mb-[0.75rem]">
+        <div className="font-mono text-[0.68rem] text-[var(--color-accent)] tracking-[0.18em] uppercase mb-[0.75rem]">
           — Projects
         </div>
-        <h2 className="font-[family-name:var(--font-disp)] text-[clamp(2.2rem,3.8vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.025em]">
+        <h2 className="font-serif text-[clamp(2.2rem,3.8vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.025em]">
           Things I&apos;ve{" "}
           <em className="not-italic italic text-[var(--color-accent)] font-light">
             built
@@ -80,10 +80,10 @@ export default function Projects() {
             `}
           >
             <div>
-              <div className="font-[family-name:var(--font-mono-custom)] text-[0.66rem] text-[var(--color-accent)] tracking-[0.12em] uppercase mb-[1rem]">
+              <div className="font-mono text-[0.66rem] text-[var(--color-accent)] tracking-[0.12em] uppercase mb-[1rem]">
                 {proj.type}
               </div>
-              <h3 className="font-[family-name:var(--font-disp)] text-[1.5rem] font-bold tracking-[-0.02em] mb-[0.75rem] leading-[1.2]">
+              <h3 className="font-serif text-[1.5rem] font-bold tracking-[-0.02em] mb-[0.75rem] leading-[1.2]">
                 {proj.title}
               </h3>
               <p className="text-[var(--color-text2)] text-[0.88rem] leading-[1.75] font-light mb-[1.5rem]">
@@ -93,7 +93,7 @@ export default function Projects() {
                 {proj.stack.map((s) => (
                   <span
                     key={s}
-                    className="font-[family-name:var(--font-mono-custom)] text-[0.63rem] bg-[var(--color-bg)] text-[var(--color-text2)] border border-[var(--color-border2)] py-[0.25rem] px-[0.65rem] rounded-full tracking-[0.04em]"
+                    className="font-mono text-[0.63rem] bg-[var(--color-bg)] text-[var(--color-text2)] border border-[var(--color-border2)] py-[0.25rem] px-[0.65rem] rounded-full tracking-[0.04em]"
                   >
                     {s}
                   </span>
@@ -105,7 +105,7 @@ export default function Projects() {
                     <Link
                       key={i}
                       href={act.href}
-                      className={`font-[family-name:var(--font-mono-custom)] text-[0.68rem] no-underline border rounded-full py-[0.48rem] px-[0.9rem] tracking-[0.04em] transition-all duration-250 hover:-translate-y-[2px] ${
+                      className={`font-mono text-[0.68rem] no-underline border rounded-full py-[0.48rem] px-[0.9rem] tracking-[0.04em] transition-all duration-250 hover:-translate-y-[2px] ${
                         act.primary
                           ? "bg-[var(--color-accent)] text-black border-[var(--color-accent)] hover:bg-[var(--color-accent2)] hover:border-[var(--color-acc-line)]"
                           : "text-[var(--color-text-main)] border-[var(--color-border2)] hover:border-[var(--color-acc-line)]"
@@ -119,7 +119,7 @@ export default function Projects() {
                       href={act.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`font-[family-name:var(--font-mono-custom)] text-[0.68rem] no-underline border rounded-full py-[0.48rem] px-[0.9rem] tracking-[0.04em] transition-all duration-250 hover:-translate-y-[2px] ${
+                      className={`font-mono text-[0.68rem] no-underline border rounded-full py-[0.48rem] px-[0.9rem] tracking-[0.04em] transition-all duration-250 hover:-translate-y-[2px] ${
                         act.primary
                           ? "bg-[var(--color-accent)] text-black border-[var(--color-accent)] hover:bg-[var(--color-accent2)] hover:border-[var(--color-acc-line)]"
                           : "text-[var(--color-text-main)] border-[var(--color-border2)] hover:border-[var(--color-acc-line)]"

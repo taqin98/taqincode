@@ -21,10 +21,10 @@ export default function Skills() {
     >
       <div className="flex justify-between items-end mb-[3.5rem] reveal max-[900px]:flex-col max-[900px]:items-start max-[900px]:gap-[1rem]">
         <div>
-          <div className="font-[family-name:var(--font-mono-custom)] text-[0.68rem] text-[var(--color-accent)] tracking-[0.18em] uppercase mb-[0.75rem]">
+          <div className="font-mono text-[0.68rem] text-[var(--color-accent)] tracking-[0.18em] uppercase mb-[0.75rem]">
             — Tech Stack
           </div>
-          <h2 className="font-[family-name:var(--font-disp)] text-[clamp(2.2rem,3.8vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.025em]">
+          <h2 className="font-serif text-[clamp(2.2rem,3.8vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.025em]">
             Tools I&apos;m{" "}
             <em className="not-italic italic text-[var(--color-accent)] font-light">
               fluent
@@ -43,10 +43,10 @@ export default function Skills() {
             <div className="text-[1.9rem] mb-[0.8rem] leading-none">
               {s.icon}
             </div>
-            <div className="font-[family-name:var(--font-mono-custom)] text-[0.78rem] text-[var(--color-text-main)] font-medium tracking-[0.02em] mb-[0.2rem]">
+            <div className="font-mono text-[0.78rem] text-[var(--color-text-main)] font-medium tracking-[0.02em] mb-[0.2rem]">
               {s.name}
             </div>
-            <div className="font-[family-name:var(--font-mono-custom)] text-[0.63rem] text-[var(--color-text3)] tracking-[0.06em]">
+            <div className="font-mono text-[0.63rem] text-[var(--color-text3)] tracking-[0.06em]">
               {s.lvl}
             </div>
           </div>
