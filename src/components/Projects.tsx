@@ -10,7 +10,7 @@ export default function Projects() {
       stack: ["Laravel", "PHP", "MySQL", "Blade", "Bootstrap", "GitHub Actions"],
       actions: [
         { label: "Request Case Study", href: "#contact", primary: true },
-        { label: "GitHub", href: "https://github.com/taqin-juni", primary: false },
+        { label: "GitHub", href: "https://github.com/taqin98", primary: false },
       ],
       visual: "🏗️",
     },
@@ -22,7 +22,7 @@ export default function Projects() {
       stack: ["Next.js", "Tailwind CSS", "Framer Motion", "Vercel"],
       actions: [
         { label: "Discuss Similar Project", href: "#contact", primary: true },
-        { label: "GitHub", href: "https://github.com/taqin-juni", primary: false },
+        { label: "GitHub", href: "https://github.com/taqin98", primary: false },
       ],
     },
     {
@@ -33,7 +33,7 @@ export default function Projects() {
       stack: ["React", "JavaScript", "CSS Modules", "GitHub"],
       actions: [
         { label: "View Components", href: "#contact", primary: true },
-        { label: "GitHub", href: "https://github.com/taqin-juni", primary: false },
+        { label: "GitHub", href: "https://github.com/taqin98", primary: false },
       ],
     },
     {
@@ -44,7 +44,7 @@ export default function Projects() {
       stack: ["Node.js", "Express", "React", "MySQL", "Vercel"],
       actions: [
         { label: "Plan an MVP", href: "#contact", primary: true },
-        { label: "GitHub", href: "https://github.com/taqin-juni", primary: false },
+        { label: "GitHub", href: "https://github.com/taqin98", primary: false },
       ],
     },
   ];
@@ -72,10 +72,9 @@ export default function Projects() {
             key={idx}
             className={`reveal proj-card bg-[var(--color-card)] border border-[var(--color-border-main)] rounded-[16px] p-[2rem] relative overflow-hidden transition-all duration-300 hover:border-[rgba(240,165,0,0.2)] hover:-translate-y-[5px] hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)]
               after:content-[''] after:absolute after:top-0 after:left-0 after:right-0 after:h-[2px] after:bg-gradient-to-r after:from-[var(--color-accent)] after:to-[var(--color-accent2)] after:scale-x-0 after:origin-left after:transition-transform after:duration-[0.35s] hover:after:scale-x-100
-              ${
-                proj.featured
-                  ? "col-span-2 grid grid-cols-[1fr_300px] gap-[2.5rem] items-center max-[900px]:col-span-1 max-[900px]:grid-cols-1"
-                  : ""
+              ${proj.featured
+                ? "col-span-2 grid grid-cols-[1fr_300px] gap-[2.5rem] items-center max-[900px]:col-span-1 max-[900px]:grid-cols-1"
+                : ""
               }
             `}
           >
@@ -105,11 +104,10 @@ export default function Projects() {
                     <Link
                       key={i}
                       href={act.href}
-                      className={`font-mono text-[0.68rem] no-underline border rounded-full py-[0.48rem] px-[0.9rem] tracking-[0.04em] transition-all duration-250 hover:-translate-y-[2px] ${
-                        act.primary
+                      className={`font-mono text-[0.68rem] no-underline border rounded-full py-[0.48rem] px-[0.9rem] tracking-[0.04em] transition-all duration-250 hover:-translate-y-[2px] ${act.primary
                           ? "bg-[var(--color-accent)] text-black border-[var(--color-accent)] hover:bg-[var(--color-accent2)] hover:border-[var(--color-acc-line)]"
                           : "text-[var(--color-text-main)] border-[var(--color-border2)] hover:border-[var(--color-acc-line)]"
-                      }`}
+                        }`}
                     >
                       {act.label}
                     </Link>
@@ -119,11 +117,10 @@ export default function Projects() {
                       href={act.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`font-mono text-[0.68rem] no-underline border rounded-full py-[0.48rem] px-[0.9rem] tracking-[0.04em] transition-all duration-250 hover:-translate-y-[2px] ${
-                        act.primary
+                      className={`font-mono text-[0.68rem] no-underline border rounded-full py-[0.48rem] px-[0.9rem] tracking-[0.04em] transition-all duration-250 hover:-translate-y-[2px] ${act.primary
                           ? "bg-[var(--color-accent)] text-black border-[var(--color-accent)] hover:bg-[var(--color-accent2)] hover:border-[var(--color-acc-line)]"
                           : "text-[var(--color-text-main)] border-[var(--color-border2)] hover:border-[var(--color-acc-line)]"
-                      }`}
+                        }`}
                     >
                       {act.label}
                     </a>

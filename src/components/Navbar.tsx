@@ -27,11 +27,10 @@ export default function Navbar() {
 
       <nav
         id="navbar"
-        className={`fixed top-0 left-0 right-0 z-[500] flex items-center justify-between transition-all duration-400 py-[1.3rem] px-[3.5rem] border-b border-transparent max-[900px]:py-4 max-[900px]:px-[1.2rem] ${
-          scrolled
+        className={`fixed top-0 left-0 right-0 z-[500] flex items-center justify-between transition-all duration-400 py-[1.3rem] px-[3.5rem] border-b border-transparent max-[900px]:py-4 max-[900px]:px-[1.2rem] ${scrolled
             ? "bg-[rgba(8,9,14,0.82)] backdrop-blur-[24px] border-b-[var(--color-border-main)]"
             : ""
-        }`}
+          }`}
       >
         <Link
           href="#"
@@ -51,9 +50,8 @@ export default function Navbar() {
 
         <ul
           id="navLinks"
-          className={`flex gap-[2.5rem] list-none max-[900px]:fixed max-[900px]:top-[70px] max-[900px]:left-4 max-[900px]:right-4 max-[900px]:flex-col max-[900px]:gap-0 max-[900px]:p-[0.9rem] max-[900px]:border max-[900px]:border-[var(--color-border-main)] max-[900px]:rounded-[18px] max-[900px]:bg-[rgba(8,9,14,0.96)] max-[900px]:backdrop-blur-[20px] max-[900px]:shadow-[0_20px_60px_rgba(0,0,0,0.35)] ${
-            menuOpen ? "max-[900px]:flex" : "max-[900px]:hidden"
-          }`}
+          className={`flex gap-[2.5rem] list-none max-[900px]:fixed max-[900px]:top-[70px] max-[900px]:left-4 max-[900px]:right-4 max-[900px]:flex-col max-[900px]:gap-0 max-[900px]:p-[0.9rem] max-[900px]:border max-[900px]:border-[var(--color-border-main)] max-[900px]:rounded-[18px] max-[900px]:bg-[rgba(8,9,14,0.96)] max-[900px]:backdrop-blur-[20px] max-[900px]:shadow-[0_20px_60px_rgba(0,0,0,0.35)] ${menuOpen ? "max-[900px]:flex" : "max-[900px]:hidden"
+            }`}
         >
           {["about", "skills", "projects", "services", "contact"].map(
             (item) => (
@@ -71,7 +69,7 @@ export default function Navbar() {
         </ul>
 
         <a
-          href="mailto:taqin.juni.or56@gmail.com"
+          href="mailto:taqinjunior56@gmail.com"
           className="font-mono text-[0.73rem] bg-[var(--color-accent)] text-black py-[0.55rem] px-[1.4rem] rounded-full no-underline font-medium tracking-[0.04em] transition-all duration-200 hover:opacity-85 hover:scale-97 max-[900px]:hidden"
         >
           Hire Me →

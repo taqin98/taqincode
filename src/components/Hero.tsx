@@ -58,7 +58,7 @@ export default function Hero() {
             See My Work ↓
           </Link>
           <a
-            href="mailto:taqin.juni.or56@gmail.com"
+            href="mailto:taqinjunior56@gmail.com"
             className="font-mono text-[0.8rem] text-[var(--color-text-main)] border border-[var(--color-border2)] py-[0.9rem] px-[2.2rem] rounded-full no-underline tracking-[0.04em] transition-all duration-250 hover:border-[var(--color-text2)]"
           >
             Email Me

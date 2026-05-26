@@ -27,7 +27,7 @@ export default function Contact() {
 
       <div className="flex justify-center gap-[1rem] flex-wrap mb-[4.5rem] relative reveal">
         <a
-          href="mailto:taqin.juni.or56@gmail.com?subject=Project%20Inquiry%20for%20Taqin"
+          href="mailto:taqinjunior56@gmail.com?subject=Project%20Inquiry%20for%20Taqin"
           className="font-mono text-[0.8rem] bg-[var(--color-accent)] text-black py-[0.9rem] px-[2.2rem] rounded-full no-underline font-medium tracking-[0.04em] transition-all duration-250 hover:bg-[var(--color-accent2)] hover:-translate-y-[2px]"
         >
           Send Email →
@@ -39,7 +39,7 @@ export default function Contact() {
           Download CV
         </a>
         <a
-          href="https://github.com/taqin-juni"
+          href="https://github.com/taqin98"
           target="_blank"
           rel="noopener noreferrer"
           className="font-mono text-[0.8rem] text-[var(--color-text-main)] border border-[var(--color-border2)] py-[0.9rem] px-[2.2rem] rounded-full no-underline tracking-[0.04em] transition-all duration-250 hover:border-[var(--color-text2)]"
@@ -47,7 +47,7 @@ export default function Contact() {
           GitHub
         </a>
         <a
-          href="https://linkedin.com/in/taqin-juni"
+          href="https://linkedin.com/in/taqin98"
           target="_blank"
           rel="noopener noreferrer"
           className="font-mono text-[0.8rem] text-[var(--color-text-main)] border border-[var(--color-border2)] py-[0.9rem] px-[2.2rem] rounded-full no-underline tracking-[0.04em] transition-all duration-250 hover:border-[var(--color-text2)]"
@@ -62,7 +62,7 @@ export default function Contact() {
             Email
           </div>
           <div className="text-[0.9rem] text-[var(--color-text-main)]">
-            taqin.juni.or56@gmail.com
+            taqinjunior56@gmail.com
           </div>
         </div>
         <div className="text-center">
