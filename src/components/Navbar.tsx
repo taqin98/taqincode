@@ -2,10 +2,12 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { lang, setLang, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -61,19 +63,53 @@ export default function Navbar() {
                   onClick={() => setMenuOpen(false)}
                   className="font-mono text-[0.73rem] text-[var(--color-text2)] no-underline tracking-[0.06em] transition-colors duration-200 hover:text-[var(--color-text-main)] max-[900px]:block max-[900px]:py-[0.85rem] max-[900px]:px-[0.8rem] max-[900px]:text-[0.78rem]"
                 >
-                  {item}
+                  {t(`nav.${item}`)}
                 </Link>
               </li>
             )
           )}
+          {/* Mobile Language Switcher */}
+          <li className="hidden max-[900px]:flex items-center gap-[0.5rem] py-[0.85rem] px-[0.8rem] mt-[0.5rem] border-t border-[var(--color-border-main)]">
+            <span className="font-mono text-[0.73rem] text-[var(--color-text3)] mr-auto">{t('nav.language')}</span>
+            <button 
+              onClick={() => setLang('en')}
+              className={`font-mono text-[0.78rem] transition-colors ${lang === 'en' ? 'text-[var(--color-text-main)] font-medium' : 'text-[var(--color-text3)] hover:text-[var(--color-text2)]'}`}
+            >
+              EN
+            </button>
+            <span className="text-[var(--color-text3)] opacity-50">/</span>
+            <button 
+              onClick={() => setLang('id')}
+              className={`font-mono text-[0.78rem] transition-colors ${lang === 'id' ? 'text-[var(--color-text-main)] font-medium' : 'text-[var(--color-text3)] hover:text-[var(--color-text2)]'}`}
+            >
+              ID
+            </button>
+          </li>
         </ul>
 
-        <a
-          href="mailto:taqinjunior56@gmail.com"
-          className="font-mono text-[0.73rem] bg-[var(--color-accent)] text-black py-[0.55rem] px-[1.4rem] rounded-full no-underline font-medium tracking-[0.04em] transition-all duration-200 hover:opacity-85 hover:scale-97 max-[900px]:hidden"
-        >
-          Hire Me →
-        </a>
+        <div className="flex items-center gap-[1.5rem] max-[900px]:hidden">
+          <div className="flex items-center gap-[0.4rem] font-mono text-[0.73rem]">
+            <button 
+              onClick={() => setLang('en')}
+              className={`transition-colors ${lang === 'en' ? 'text-[var(--color-text-main)] font-medium' : 'text-[var(--color-text3)] hover:text-[var(--color-text2)]'}`}
+            >
+              EN
+            </button>
+            <span className="text-[var(--color-text3)] opacity-50">/</span>
+            <button 
+              onClick={() => setLang('id')}
+              className={`transition-colors ${lang === 'id' ? 'text-[var(--color-text-main)] font-medium' : 'text-[var(--color-text3)] hover:text-[var(--color-text2)]'}`}
+            >
+              ID
+            </button>
+          </div>
+          <a
+            href="mailto:taqinjunior56@gmail.com"
+            className="font-mono text-[0.73rem] bg-[var(--color-accent)] text-black py-[0.55rem] px-[1.4rem] rounded-full no-underline font-medium tracking-[0.04em] transition-all duration-200 hover:opacity-85 hover:scale-97"
+          >
+            {t('nav.hire')}
+          </a>
+        </div>
       </nav>
     </>
   );

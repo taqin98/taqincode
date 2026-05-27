@@ -1,4 +1,8 @@
+"use client";
+
+import { useLanguage } from "@/context/LanguageContext";
 export default function Skills() {
+  const { t } = useLanguage();
   const stackData = [
     { icon: "⚛️", name: "React", lvl: "Proficient" },
     { icon: "▲", name: "Next.js", lvl: "Proficient" },

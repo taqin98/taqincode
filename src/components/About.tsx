@@ -1,36 +1,34 @@
+"use client";
+
+import { useLanguage } from "@/context/LanguageContext";
 export default function About() {
+  const { t } = useLanguage();
   return (
     <section
       id="about"
       className="py-[7rem] px-[3.5rem] border-t border-[var(--color-border-main)] max-[900px]:py-[5rem] max-[900px]:px-[1.5rem]"
     >
       <div className="font-mono text-[0.68rem] text-[var(--color-accent)] tracking-[0.18em] uppercase mb-[0.75rem] reveal">
-        — About
+        {t('about.title')}
       </div>
       <div className="grid grid-cols-[1.3fr_1fr] gap-[6rem] mt-[3.5rem] max-[900px]:grid-cols-1 max-[900px]:gap-[3rem]">
         <div className="flex flex-col">
           <h2 className="font-serif text-[clamp(2.2rem,3.8vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.025em] reveal">
-            Code that<br />
-            <em className="italic text-[var(--color-accent)] font-light">works.</em>
+            {t('about.heading.1')}<br />
+            <em className="italic text-[var(--color-accent)] font-light">{t('about.heading.2')}</em>
           </h2>
           <p className="text-[1rem] text-[var(--color-text2)] leading-[1.85] font-light mb-[1rem] mt-[2rem] reveal">
-            I&apos;m Taqin, a web developer based in Semarang, Central Java,
-            Indonesia with hands-on experience building production-grade web
-            applications. I focus on practical interfaces, maintainable code,
-            and systems that help real businesses move faster.
+            {t('about.p1')}
           </p>
           <p className="text-[1rem] text-[var(--color-text2)] leading-[1.85] font-light mb-[1rem] reveal">
-            My strongest areas are React/Next.js for frontend work and
-            Laravel/PHP for data-driven systems. I also work with Node.js,
-            MySQL, Git, GitHub workflows, and Vercel deployments — from idea,
-            implementation, testing, to launch.
+            {t('about.p2')}
           </p>
           <div className="grid grid-cols-2 gap-[1rem] mt-[2.5rem] reveal">
             {[
-              { num: "2+", label: "Years Experience" },
-              { num: "20+", label: "Projects Built" },
-              { num: "100%", label: "Remote Ready" },
-              { num: "UTC+7", label: "Async Friendly" },
+              { num: "4+", label: t('about.stats.years') },
+              { num: "20+", label: t('about.stats.projects') },
+              { num: "100%", label: t('about.stats.remote') },
+              { num: "UTC+7", label: t('about.stats.async') },
             ].map((stat, idx) => (
               <div
                 key={idx}
@@ -50,7 +48,7 @@ export default function About() {
         <div className="flex flex-col gap-[1.1rem] reveal">
           <div className="bg-[var(--color-card)] border border-[var(--color-border-main)] rounded-[12px] py-[1.3rem] px-[1.5rem] transition-colors duration-300 hover:border-[var(--color-border2)]">
             <div className="font-mono text-[0.63rem] text-[var(--color-text3)] tracking-[0.12em] uppercase mb-[0.5rem]">
-              What I Build
+              {t('about.build')}
             </div>
             <div className="flex flex-wrap gap-[0.45rem] mt-[0.5rem]">
               {[
@@ -73,24 +71,24 @@ export default function About() {
 
           {[
             {
-              label: "Work Type",
-              val: "Freelance · Contract · Full-time Remote",
+              label: t('about.row.work'),
+              val: t('about.row.work.val'),
             },
             {
-              label: "Tools & Workflow",
+              label: t('about.row.tools'),
               chips: ["GitHub", "Vercel", "VS Code", "Git", "Figma"],
             },
             {
-              label: "Location",
-              val: "Semarang, Central Java, Indonesia 🇮🇩",
+              label: t('about.row.location'),
+              val: t('about.row.location.val'),
             },
             {
-              label: "Communication",
-              val: "English · Bahasa Indonesia · Async preferred",
+              label: t('about.row.comm'),
+              val: t('about.row.comm.val'),
             },
             {
-              label: "Best Fit",
-              val: "Landing pages · Laravel dashboards · Internal tools · Fullstack MVPs",
+              label: t('about.row.fit'),
+              val: t('about.row.fit.val'),
             },
           ].map((row, idx) => (
             <div

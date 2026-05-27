@@ -1,19 +1,23 @@
+"use client";
+
+import { useLanguage } from "@/context/LanguageContext";
 export default function Services() {
+  const { t } = useLanguage();
   const services = [
     {
       num: "01",
-      title: "Landing Pages",
-      desc: "Fast, responsive landing pages built with Next.js or clean HTML/CSS. Optimized for clarity, performance, and conversion.",
+      title: t('svc.1.title'),
+      desc: t('svc.1.desc'),
     },
     {
       num: "02",
-      title: "React Development",
-      desc: "Custom React components, interactive UIs, and full React/Next.js frontend applications with clean, maintainable code.",
+      title: t('svc.2.title'),
+      desc: t('svc.2.desc'),
     },
     {
       num: "03",
-      title: "Fullstack & ERP",
-      desc: "From Node + React apps to Laravel ERP dashboards — I help turn business workflows into reliable web systems.",
+      title: t('svc.3.title'),
+      desc: t('svc.3.desc'),
     },
   ];
 
@@ -23,13 +27,11 @@ export default function Services() {
       className="bg-[var(--color-bg2)] border-t border-b border-[var(--color-border-main)] py-[7rem] px-[3.5rem] max-[900px]:py-[5rem] max-[900px]:px-[1.5rem]"
     >
       <div className="font-mono text-[0.68rem] text-[var(--color-accent)] tracking-[0.18em] uppercase mb-[0.75rem] reveal">
-        — Services
+        {t('svc.title')}
       </div>
       <h2 className="font-serif text-[clamp(2.2rem,3.8vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.025em] reveal">
         What I{" "}
-        <em className="italic text-[var(--color-accent)] font-light">
-          offer
-        </em>
+        <em className="italic text-[var(--color-accent)] font-light">{t('svc.heading.2')}</em>
       </h2>
       <div className="grid grid-cols-3 gap-[1.25rem] mt-[3rem] max-[900px]:grid-cols-1">
         {services.map((svc) => (

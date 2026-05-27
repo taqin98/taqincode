@@ -1,8 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Hero() {
+  const { t, lang } = useLanguage();
+
   return (
     <section
       className="min-h-screen pt-[9rem] pb-[5rem] px-[3.5rem] grid grid-cols-[1fr_auto] gap-[3rem] items-center relative overflow-hidden max-[900px]:pt-[8rem] max-[900px]:pb-[4rem] max-[900px]:px-[1.5rem] max-[900px]:grid-cols-1"
@@ -27,27 +30,41 @@ export default function Hero() {
       <div className="relative z-[2]">
         <div className="inline-flex items-center gap-[0.6rem] font-mono text-[0.72rem] text-[var(--color-accent)] border border-[var(--color-acc-line)] bg-[var(--color-acc-dim)] py-[0.4rem] px-[1.1rem] rounded-full mb-[2.5rem] tracking-[0.08em] opacity-0 animate-fade-up" style={{ animationDelay: '0.1s' }}>
           <div className="w-[7px] h-[7px] rounded-full bg-[var(--color-accent)] animate-pulse-slow"></div>
-          Available for Remote · UTC+7
+          {t('hero.badge')}
         </div>
 
         <h1 className="font-serif text-[clamp(3.8rem,7.5vw,7.8rem)] font-black leading-[0.93] tracking-[-0.035em] mb-[2rem] opacity-0 animate-fade-up" style={{ animationDelay: '0.25s' }}>
-          Fullstack<br />
-          <em className="italic text-[var(--color-accent)] font-light">Developer</em><br />
-          who <span className="text-transparent [-webkit-text-stroke:1.5px_var(--color-text2)]">delivers.</span>
+          {t('hero.title.line1')}<br />
+          <em className="italic text-[var(--color-accent)] font-light">{t('hero.title.line2')}</em><br />
+          {lang === 'id' ? (
+            <span className="inline-flex items-center gap-[0.8rem] align-middle">
+              <span className="flex flex-col text-[clamp(1.2rem,2.5vw,1.8rem)] leading-[1.1] font-bold tracking-tight text-right">
+                <span>yang</span>
+                <span>dapat</span>
+              </span>
+              <span className="text-transparent [-webkit-text-stroke:1.5px_var(--color-text2)]">
+                {t('hero.title.line3.highlight')}
+              </span>
+            </span>
+          ) : (
+            <>
+              {t('hero.title.line3')}
+              <span className="text-transparent [-webkit-text-stroke:1.5px_var(--color-text2)]">
+                {t('hero.title.line3.highlight')}
+              </span>
+            </>
+          )}
         </h1>
 
         <div className="flex items-center gap-[1rem] mb-[1.5rem] opacity-0 animate-fade-up" style={{ animationDelay: '0.4s' }}>
           <div className="w-[44px] h-[1px] bg-[var(--color-text3)]"></div>
           <p className="font-mono text-[0.73rem] text-[var(--color-text2)] tracking-[0.1em] uppercase">
-            Frontend · Fullstack · Laravel · Vercel
+            {t('hero.stack')}
           </p>
         </div>
 
         <p className="text-[1.05rem] text-[var(--color-text2)] max-w-[460px] leading-[1.75] font-light mb-[3rem] opacity-0 animate-fade-up" style={{ animationDelay: '0.5s' }}>
-          I build practical, production-ready web products — from fast landing
-          pages to Laravel-based ERP systems, dashboards, and fullstack business
-          tools. Based in Semarang, Indonesia. Working remotely and
-          asynchronously.
+          {t('hero.desc')}
         </p>
 
         <div className="flex gap-[0.9rem] items-center flex-wrap opacity-0 animate-fade-up" style={{ animationDelay: '0.65s' }}>
@@ -55,22 +72,24 @@ export default function Hero() {
             href="#projects"
             className="font-mono text-[0.8rem] bg-[var(--color-accent)] text-black py-[0.9rem] px-[2.2rem] rounded-full no-underline font-medium tracking-[0.04em] transition-all duration-250 hover:bg-[var(--color-accent2)] hover:-translate-y-[2px]"
           >
-            See My Work ↓
+            {t('hero.action.work')}
           </Link>
           <a
             href="mailto:taqinjunior56@gmail.com"
             className="font-mono text-[0.8rem] text-[var(--color-text-main)] border border-[var(--color-border2)] py-[0.9rem] px-[2.2rem] rounded-full no-underline tracking-[0.04em] transition-all duration-250 hover:border-[var(--color-text2)]"
           >
-            Email Me
+            {t('hero.action.email')}
           </a>
           <a
-            href="/resume.pdf"
+            href={t('link.cv')}
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-mono text-[0.8rem] text-[var(--color-text-main)] border border-[var(--color-border2)] py-[0.9rem] px-[2.2rem] rounded-full no-underline tracking-[0.04em] transition-all duration-250 hover:border-[var(--color-text2)]"
           >
-            Download CV
+            {t('hero.action.cv')}
           </a>
           <span className="font-mono text-[0.68rem] text-[var(--color-text3)] tracking-[0.06em]">
-            🕐 UTC+7 · <span className="text-[var(--color-green-custom)]">Open to work</span>
+            {t('hero.tz')}<span className="text-[var(--color-green-custom)]">{t('hero.tz.live')}</span>
           </span>
         </div>
       </div>
@@ -83,10 +102,10 @@ export default function Hero() {
             </div>
             <div className="flex flex-col">
               <div className="font-mono text-[0.62rem] text-[var(--color-text3)] tracking-[0.1em] uppercase mb-[0.3rem]">
-                Status
+                {t('hero.card.status')}
               </div>
               <div className="text-[0.88rem] text-[var(--color-text-main)] font-medium leading-[1.2]">
-                <span className="text-[var(--color-green-custom)]">● Available</span> for remote
+                <span className="text-[var(--color-green-custom)]">● {t('hero.card.status.val')}</span>{t('hero.card.status.val2')}
               </div>
             </div>
           </div>
@@ -94,7 +113,7 @@ export default function Hero() {
 
         <div className="bg-[var(--color-card)] border border-[var(--color-border-main)] rounded-[14px] py-[1.25rem] px-[1.5rem] min-w-[220px]">
           <div className="font-mono text-[0.62rem] text-[var(--color-text3)] tracking-[0.1em] uppercase mb-[0.5rem]">
-            Primary Stack
+            {t('hero.card.stack')}
           </div>
           <div className="flex flex-wrap gap-[0.35rem] mt-[0.5rem]">
             {["React", "Next.js", "Laravel", "Node.js", "MySQL"].map((tag) => (
@@ -110,7 +129,7 @@ export default function Hero() {
 
         <div className="bg-[var(--color-card)] border border-[var(--color-border-main)] rounded-[14px] py-[1.25rem] px-[1.5rem] min-w-[220px]">
           <div className="font-mono text-[0.62rem] text-[var(--color-text3)] tracking-[0.1em] uppercase mb-[0.5rem]">
-            Deploy &amp; Ship
+            {t('hero.card.deploy')}
           </div>
           <div className="text-[0.88rem] text-[var(--color-text-main)] font-medium">
             <span className="text-[var(--color-accent)]">Vercel</span> · GitHub · Git
@@ -119,7 +138,7 @@ export default function Hero() {
 
         <div className="bg-[var(--color-card)] border border-[var(--color-border-main)] rounded-[14px] py-[1.25rem] px-[1.5rem] min-w-[220px]">
           <div className="font-mono text-[0.62rem] text-[var(--color-text3)] tracking-[0.1em] uppercase mb-[0.5rem]">
-            Timezone
+            {t('hero.card.tz')}
           </div>
           <div className="text-[0.88rem] text-[var(--color-text-main)] font-medium">
             WIB · UTC+7 · Semarang 🇮🇩

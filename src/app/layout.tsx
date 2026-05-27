@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import CustomCursor from "@/components/CustomCursor";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 export const viewport = {
   themeColor: "#08090e",
@@ -38,8 +39,10 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <CustomCursor />
-        {children}
+        <LanguageProvider>
+          <CustomCursor />
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

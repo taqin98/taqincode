@@ -1,4 +1,8 @@
+"use client";
+
+import { useLanguage } from "@/context/LanguageContext";
 export default function Footer() {
+  const { t } = useLanguage();
   return (
     <footer className="py-[1.75rem] px-[3.5rem] border-t border-[var(--color-border-main)] flex justify-between items-center max-[900px]:flex-col max-[900px]:gap-[0.5rem] max-[900px]:text-center max-[900px]:p-[1.5rem]">
       <p className="font-mono text-[0.68rem] text-[var(--color-text3)] tracking-[0.05em]">
@@ -9,7 +13,7 @@ export default function Footer() {
         · Semarang, Indonesia
       </p>
       <p className="font-mono text-[0.68rem] text-[var(--color-text3)] tracking-[0.05em]">
-        Built with Next.js, Tailwind CSS · Deployed on{" "}
+        {t('footer.built')}{" "}
         <a
           href="https://vercel.com"
           target="_blank"

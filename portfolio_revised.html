@@ -180,6 +180,24 @@
       transform: scale(0.97);
     }
 
+    .lang-btn {
+      background: none;
+      border: none;
+      color: var(--text3);
+      font-family: inherit;
+      font-size: inherit;
+      cursor: pointer;
+      padding: 0;
+      transition: color 0.2s;
+    }
+    .lang-btn:hover {
+      color: var(--text2);
+    }
+    .lang-btn.active {
+      color: var(--text);
+      font-weight: 500;
+    }
+
     /* ── HERO ── */
     .hero {
       min-height: 100vh;
@@ -1116,6 +1134,17 @@
       .nav-cta {
         display: none;
       }
+      .desktop-lang-switch {
+        display: none !important;
+      }
+      .mobile-lang-switch {
+        display: flex !important;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.85rem 0.8rem;
+        margin-top: 0.5rem;
+        border-top: 1px solid var(--border);
+      }
 
       .nav-links {
         position: fixed;
@@ -1215,8 +1244,23 @@
       <li><a href="#projects">projects</a></li>
       <li><a href="#services">services</a></li>
       <li><a href="#contact">contact</a></li>
+      <!-- Mobile Language Switcher -->
+      <li class="mobile-lang-switch">
+        <span style="font-family: var(--ff-mono); font-size: 0.73rem; color: var(--text3); margin-right: auto;">Language</span>
+        <button class="lang-btn active">EN</button>
+        <span style="color: var(--text3); opacity: 0.5;">/</span>
+        <button class="lang-btn">ID</button>
+      </li>
     </ul>
-    <a href="mailto:taqinjunior56@gmail.com" class="nav-cta">Hire Me →</a>
+    <div style="display: flex; align-items: center; gap: 1.5rem;">
+      <!-- Desktop Language Switcher -->
+      <div class="desktop-lang-switch" style="display: flex; align-items: center; gap: 0.4rem; font-family: var(--ff-mono); font-size: 0.73rem;">
+        <button class="lang-btn active">EN</button>
+        <span style="color: var(--text3); opacity: 0.5;">/</span>
+        <button class="lang-btn">ID</button>
+      </div>
+      <a href="mailto:taqinjunior56@gmail.com" class="nav-cta">Hire Me →</a>
+    </div>
   </nav>
 
   <!-- ══ HERO ══ -->
