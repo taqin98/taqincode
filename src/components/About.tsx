@@ -27,7 +27,7 @@ export default function About() {
           </p>
           <div className="grid grid-cols-2 gap-[1rem] mt-[2.5rem] reveal">
             {[
-              { num: "2+", label: "Years Shipping" },
+              { num: "2+", label: "Years Experience" },
               { num: "20+", label: "Projects Built" },
               { num: "100%", label: "Remote Ready" },
               { num: "UTC+7", label: "Async Friendly" },

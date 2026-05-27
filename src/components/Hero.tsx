@@ -33,7 +33,7 @@ export default function Hero() {
         <h1 className="font-serif text-[clamp(3.8rem,7.5vw,7.8rem)] font-black leading-[0.93] tracking-[-0.035em] mb-[2rem] opacity-0 animate-fade-up" style={{ animationDelay: '0.25s' }}>
           Fullstack<br />
           <em className="italic text-[var(--color-accent)] font-light">Developer</em><br />
-          who <span className="text-transparent [-webkit-text-stroke:1.5px_var(--color-text2)]">ships.</span>
+          who <span className="text-transparent [-webkit-text-stroke:1.5px_var(--color-text2)]">delivers.</span>
         </h1>
 
         <div className="flex items-center gap-[1rem] mb-[1.5rem] opacity-0 animate-fade-up" style={{ animationDelay: '0.4s' }}>
@@ -77,11 +77,18 @@ export default function Hero() {
 
       <div className="relative z-[2] flex flex-col gap-[1rem] opacity-0 animate-fade-left max-[900px]:hidden" style={{ animationDelay: '0.8s' }}>
         <div className="bg-[var(--color-card)] border border-[var(--color-border-main)] rounded-[14px] py-[1.25rem] px-[1.5rem] min-w-[220px]">
-          <div className="font-mono text-[0.62rem] text-[var(--color-text3)] tracking-[0.1em] uppercase mb-[0.5rem]">
-            Status
-          </div>
-          <div className="text-[0.88rem] text-[var(--color-text-main)] font-medium">
-            <span className="text-[var(--color-green-custom)]">● Available</span> for remote
+          <div className="flex items-center gap-[1rem]">
+            <div className="shrink-0">
+              <img src="/avatar.png" alt="Avatar" className="w-[48px] h-[48px] rounded-full object-cover border border-[var(--color-border-main)]" />
+            </div>
+            <div className="flex flex-col">
+              <div className="font-mono text-[0.62rem] text-[var(--color-text3)] tracking-[0.1em] uppercase mb-[0.3rem]">
+                Status
+              </div>
+              <div className="text-[0.88rem] text-[var(--color-text-main)] font-medium leading-[1.2]">
+                <span className="text-[var(--color-green-custom)]">● Available</span> for remote
+              </div>
+            </div>
           </div>
         </div>
 
