@@ -62,12 +62,12 @@ const translations: Record<Language, Record<string, string>> = {
     "about.row.fit.val": "Landing pages · Laravel dashboards · Internal tools · Fullstack MVPs",
 
     // Skills
-    "skills.title": "— The Stack",
-    "skills.heading.1": "Tools of the ",
-    "skills.heading.2": "trade.",
-    "skills.cat.frontend": "Frontend",
-    "skills.cat.backend": "Backend & Database",
-    "skills.cat.tools": "Tools & Deployment",
+    "skills.title": "— Tech Stack",
+    "skills.heading.1": "Tools I'm",
+    "skills.heading.2": "fluent",
+    "skills.heading.3": "in",
+    "skills.lvl.proficient": "Proficient",
+    "skills.lvl.intermediate": "Intermediate",
 
     // Projects
     "proj.title": "— Selected Projects",
@@ -110,7 +110,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Footer
     "footer.built": "Built with Next.js, Tailwind CSS · Deployed on",
-},
+  },
   id: {
     // Navbar
     "nav.about": "tentang",
@@ -143,9 +143,9 @@ const translations: Record<Language, Record<string, string>> = {
     // About
     "about.title": "— Tentang",
     "about.heading.1": "Kode yang",
-    "about.heading.2": "berfungsi.",
-    "about.p1": "Saya Taqin, seorang web developer berbasis di Semarang, Jawa Tengah, Indonesia dengan pengalaman langsung membangun aplikasi web skala produksi. Saya berfokus pada antarmuka praktis, kode yang mudah dipelihara, dan sistem yang membantu bisnis nyata bergerak lebih cepat.",
-    "about.p2": "Keahlian utama saya adalah React/Next.js untuk frontend dan Laravel/PHP untuk sistem berbasis data. Saya juga menggunakan Node.js, MySQL, Git, alur kerja GitHub, dan penerapan Vercel — mulai dari ide, implementasi, pengujian, hingga peluncuran.",
+    "about.heading.2": "berjalan.",
+    "about.p1": "Saya Taqin, seorang web developer berbasis di Semarang, Jawa Tengah, Indonesia dengan pengalaman langsung membangun aplikasi web siap produksi. Saya berfokus pada antarmuka praktis, kode yang mudah dipelihara, dan sistem yang membantu bisnis nyata bergerak lebih cepat.",
+    "about.p2": "Keahlian utama saya adalah React/Next.js untuk frontend dan Laravel/PHP untuk sistem berbasis data. Saya juga menggunakan Node.js, MySQL, Git, alur kerja GitHub, dan deployment di Vercel — mulai dari ide, implementasi, pengujian, hingga peluncuran.",
     "about.stats.years": "Tahun Pengalaman",
     "about.stats.projects": "Proyek Selesai",
     "about.stats.remote": "Siap Remote",
@@ -163,11 +163,11 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Skills
     "skills.title": "— Tech Stack",
-    "skills.heading.1": "Alat yang ",
-    "skills.heading.2": "digunakan.",
-    "skills.cat.frontend": "Frontend",
-    "skills.cat.backend": "Backend & Database",
-    "skills.cat.tools": "Alat & Deployment",
+    "skills.heading.1": "Alat yang saya",
+    "skills.heading.2": "kuasai",
+    "skills.heading.3": " ",
+    "skills.lvl.proficient": "Mahir",
+    "skills.lvl.intermediate": "Menengah",
 
     // Projects
     "proj.title": "— Proyek Pilihan",
@@ -210,7 +210,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Footer
     "footer.built": "Dibangun dengan Next.js, Tailwind CSS · Di-deploy di",
-}
+  }
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);

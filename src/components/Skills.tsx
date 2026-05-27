@@ -4,18 +4,18 @@ import { useLanguage } from "@/context/LanguageContext";
 export default function Skills() {
   const { t } = useLanguage();
   const stackData = [
-    { icon: "⚛️", name: "React", lvl: "Proficient" },
-    { icon: "▲", name: "Next.js", lvl: "Proficient" },
-    { icon: "🟨", name: "JavaScript", lvl: "Proficient" },
-    { icon: "🌐", name: "HTML & CSS", lvl: "Proficient" },
-    { icon: "🐘", name: "PHP", lvl: "Proficient" },
-    { icon: "🔴", name: "Laravel", lvl: "Proficient" },
-    { icon: "🟢", name: "Node.js", lvl: "Intermediate" },
-    { icon: "🗄️", name: "MySQL", lvl: "Proficient" },
-    { icon: "🐙", name: "Git & GitHub", lvl: "Proficient" },
-    { icon: "🚀", name: "Vercel", lvl: "Proficient" },
-    { icon: "💨", name: "Tailwind CSS", lvl: "Proficient" },
-    { icon: "📦", name: "REST API", lvl: "Intermediate" },
+    { icon: "⚛️", name: "React", lvl: t('skills.lvl.proficient') },
+    { icon: "▲", name: "Next.js", lvl: t('skills.lvl.proficient') },
+    { icon: "🟨", name: "JavaScript", lvl: t('skills.lvl.proficient') },
+    { icon: "🌐", name: "HTML & CSS", lvl: t('skills.lvl.proficient') },
+    { icon: "🐘", name: "PHP", lvl: t('skills.lvl.proficient') },
+    { icon: "🔴", name: "Laravel", lvl: t('skills.lvl.proficient') },
+    { icon: "🟢", name: "Node.js", lvl: t('skills.lvl.intermediate') },
+    { icon: "🗄️", name: "MySQL", lvl: t('skills.lvl.proficient') },
+    { icon: "🐙", name: "Git & GitHub", lvl: t('skills.lvl.proficient') },
+    { icon: "🚀", name: "Vercel", lvl: t('skills.lvl.proficient') },
+    { icon: "💨", name: "Tailwind CSS", lvl: t('skills.lvl.proficient') },
+    { icon: "📦", name: "REST API", lvl: t('skills.lvl.intermediate') },
   ];
 
   return (
@@ -26,14 +26,14 @@ export default function Skills() {
       <div className="flex justify-between items-end mb-[3.5rem] reveal max-[900px]:flex-col max-[900px]:items-start max-[900px]:gap-[1rem]">
         <div>
           <div className="font-mono text-[0.68rem] text-[var(--color-accent)] tracking-[0.18em] uppercase mb-[0.75rem]">
-            — Tech Stack
+            {t('skills.title')}
           </div>
           <h2 className="font-serif text-[clamp(2.2rem,3.8vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.025em]">
-            Tools I&apos;m{" "}
+            {t('skills.heading.1')}{" "}
             <em className="italic text-[var(--color-accent)] font-light">
-              fluent
+              {t('skills.heading.2')}
             </em>{" "}
-            in
+            {t('skills.heading.3')}
           </h2>
         </div>
       </div>
