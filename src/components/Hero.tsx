@@ -2,18 +2,81 @@
 
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
+import { useEffect, useRef, useState } from "react";
+import * as THREE from "three";
 
 export default function Hero() {
   const { t, lang } = useLanguage();
+  const [vantaEffect, setVantaEffect] = useState<any>(null);
+  const vantaRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (!vantaEffect && typeof window !== "undefined") {
+      const loadVanta = async () => {
+        try {
+          const rootStyle = getComputedStyle(document.documentElement);
+          const accentHex = rootStyle.getPropertyValue('--color-accent').trim().replace('#', '0x');
+          const bgHex = rootStyle.getPropertyValue('--color-bg').trim().replace('#', '0x');
+          const vantaColor = accentHex ? parseInt(accentHex, 16) : 0xf0a500;
+          const vantaBg = bgHex ? parseInt(bgHex, 16) : 0x08090e;
+
+          // @ts-expect-error Vanta does not have types
+          const NET = (await import("vanta/dist/vanta.net.min")).default;
+          setVantaEffect(
+            NET({
+              el: vantaRef.current,
+              THREE,
+              color: vantaColor,
+              backgroundColor: vantaBg,
+              points: 10.00,      // increased points
+              maxDistance: 20.00, // increased max distance
+              spacing: 15.00,     // wider spacing for zoomed-out look
+              showDots: true,
+              mouseControls: true,
+              touchControls: true,
+              gyroControls: false,
+            })
+          );
+        } catch (e) {
+          console.error("Vanta load error:", e);
+        }
+      };
+      loadVanta();
+    }
+
+    // Observe theme changes to update Vanta color dynamically
+    const observer = new MutationObserver(() => {
+      if (vantaEffect) {
+        const rootStyle = getComputedStyle(document.documentElement);
+        const accentHex = rootStyle.getPropertyValue('--color-accent').trim().replace('#', '0x');
+        const bgHex = rootStyle.getPropertyValue('--color-bg').trim().replace('#', '0x');
+        const newColor = accentHex ? parseInt(accentHex, 16) : 0xf0a500;
+        const newBg = bgHex ? parseInt(bgHex, 16) : 0x08090e;
+        vantaEffect.setOptions({ color: newColor, backgroundColor: newBg });
+      }
+    });
+
+    if (typeof document !== 'undefined') {
+      observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    }
+
+    return () => {
+      observer.disconnect();
+      if (vantaEffect) vantaEffect.destroy();
+    };
+  }, [vantaEffect]);
 
   return (
     <section
       className="min-h-screen pt-[9rem] pb-[5rem] px-[3.5rem] grid grid-cols-[1fr_auto] gap-[3rem] items-center relative overflow-hidden max-[900px]:pt-[8rem] max-[900px]:pb-[4rem] max-[900px]:px-[1.5rem] max-[900px]:grid-cols-1"
       id="home"
     >
+      {/* Vanta Background Container */}
+      <div ref={vantaRef} className="absolute inset-0 z-0 pointer-events-none" style={{ opacity: 0.06 }}></div>
+
       {/* Decorative grid lines */}
       <div
-        className="absolute inset-0 opacity-35 pointer-events-none"
+        className="absolute inset-0 opacity-35 pointer-events-none z-[1]"
         style={{
           backgroundImage:
             "linear-gradient(to right, var(--color-border-main) 1px, transparent 1px), linear-gradient(to bottom, var(--color-border-main) 1px, transparent 1px)",
@@ -25,7 +88,7 @@ export default function Hero() {
         }}
       ></div>
 
-      <div className="absolute w-[700px] h-[700px] rounded-full bg-[radial-gradient(circle,rgba(240,165,0,0.07)_0%,transparent_65%)] top-1/2 right-[-200px] -translate-y-1/2 pointer-events-none"></div>
+      <div className="absolute w-[700px] h-[700px] rounded-full bg-[radial-gradient(circle,rgba(240,165,0,0.07)_0%,transparent_65%)] top-1/2 right-[-200px] -translate-y-1/2 pointer-events-none z-[1]"></div>
 
       <div className="relative z-[2]">
         <div className="inline-flex items-center gap-[0.6rem] font-mono text-[0.72rem] text-[var(--color-accent)] border border-[var(--color-acc-line)] bg-[var(--color-acc-dim)] py-[0.4rem] px-[1.1rem] rounded-full mb-[2.5rem] tracking-[0.08em] opacity-0 animate-fade-up" style={{ animationDelay: '0.1s' }}>
