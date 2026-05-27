@@ -32,7 +32,7 @@ export default function Navbar() {
       <nav
         id="navbar"
         className={`fixed top-0 left-0 right-0 z-[500] flex items-center justify-between transition-all duration-400 py-[1.3rem] px-[3.5rem] border-b border-transparent max-[900px]:py-4 max-[900px]:px-[1.2rem] ${scrolled
-            ? "bg-[rgba(8,9,14,0.82)] backdrop-blur-[24px] border-b-[var(--color-border-main)]"
+            ? "dark-nav bg-[rgba(8,9,14,0.82)] backdrop-blur-[24px] border-b-[var(--color-border-main)]"
             : ""
           }`}
       >
@@ -44,7 +44,7 @@ export default function Navbar() {
         </Link>
 
         <button
-          className="hidden max-[900px]:inline-flex items-center justify-center w-[42px] h-[42px] rounded-full border border-[var(--color-border2)] bg-[rgba(17,18,25,0.86)] text-[var(--color-text-main)] font-mono cursor-pointer"
+          className="dark-nav hidden max-[900px]:inline-flex items-center justify-center w-[42px] h-[42px] rounded-full border border-[var(--color-border2)] bg-[rgba(17,18,25,0.86)] text-[var(--color-text-main)] font-mono cursor-pointer"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Open navigation"
           aria-expanded={menuOpen}
@@ -54,7 +54,7 @@ export default function Navbar() {
 
         <ul
           id="navLinks"
-          className={`flex gap-[2.5rem] list-none max-[900px]:fixed max-[900px]:top-[70px] max-[900px]:left-4 max-[900px]:right-4 max-[900px]:flex-col max-[900px]:gap-0 max-[900px]:p-[0.9rem] max-[900px]:border max-[900px]:border-[var(--color-border-main)] max-[900px]:rounded-[18px] max-[900px]:bg-[rgba(8,9,14,0.96)] max-[900px]:backdrop-blur-[20px] max-[900px]:shadow-[0_20px_60px_rgba(0,0,0,0.35)] ${menuOpen ? "max-[900px]:flex" : "max-[900px]:hidden"
+          className={`dark-nav flex gap-[2.5rem] list-none max-[900px]:fixed max-[900px]:top-[70px] max-[900px]:left-4 max-[900px]:right-4 max-[900px]:flex-col max-[900px]:gap-0 max-[900px]:p-[0.9rem] max-[900px]:border max-[900px]:border-[var(--color-border-main)] max-[900px]:rounded-[18px] max-[900px]:bg-[rgba(8,9,14,0.96)] max-[900px]:backdrop-blur-[20px] max-[900px]:shadow-[0_20px_60px_rgba(0,0,0,0.35)] ${menuOpen ? "max-[900px]:flex" : "max-[900px]:hidden"
             }`}
         >
           {["about", "skills", "projects", "services", "contact"].map(

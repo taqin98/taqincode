@@ -64,6 +64,15 @@
   --foreground: var(--color-text-main);
 }
 
+/* ── Navbar Dark Override ── */
+.dark-nav {
+  --color-border-main: #1c1d2a !important;
+  --color-border2: #252636 !important;
+  --color-text-main: #f0ede6 !important;
+  --color-text2: #9a99aa !important;
+  --color-text3: #5a596a !important;
+}
+
 html {
   scroll-behavior: smooth;
 }
