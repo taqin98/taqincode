@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import CustomCursor from "@/components/CustomCursor";
 import { LanguageProvider } from "@/context/LanguageContext";
+import { ThemeProvider } from "@/context/ThemeContext";
 
 export const viewport = {
   themeColor: "#08090e",
@@ -29,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -38,11 +39,13 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>
-        <LanguageProvider>
-          <CustomCursor />
-          {children}
-        </LanguageProvider>
+      <body suppressHydrationWarning>
+        <ThemeProvider>
+          <LanguageProvider>
+            <CustomCursor />
+            {children}
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

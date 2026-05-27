@@ -3,11 +3,13 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
+import { useTheme } from "@/context/ThemeContext";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { lang, setLang, t } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -85,6 +87,16 @@ export default function Navbar() {
               ID
             </button>
           </li>
+          {/* Mobile Theme Switcher */}
+          <li className="hidden max-[900px]:flex items-center gap-[0.5rem] py-[0.85rem] px-[0.8rem] border-t border-[var(--color-border-main)]">
+            <span className="font-mono text-[0.73rem] text-[var(--color-text3)] mr-auto">Theme</span>
+            <button 
+              onClick={toggleTheme}
+              className="font-mono text-[0.78rem] text-[var(--color-text-main)] transition-colors hover:text-[var(--color-text2)]"
+            >
+              {theme === 'dark' ? 'Light Mode ☀️' : 'Dark Mode 🌙'}
+            </button>
+          </li>
         </ul>
 
         <div className="flex items-center gap-[1.5rem] max-[900px]:hidden">
@@ -103,6 +115,13 @@ export default function Navbar() {
               ID
             </button>
           </div>
+          <button
+            onClick={toggleTheme}
+            className="flex items-center justify-center w-[34px] h-[34px] rounded-full border border-[var(--color-border2)] text-[var(--color-text-main)] transition-all duration-200 hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] cursor-pointer"
+            aria-label="Toggle Theme"
+          >
+            {theme === 'dark' ? '☀️' : '🌙'}
+          </button>
           <a
             href="mailto:taqinjunior56@gmail.com"
             className="font-mono text-[0.73rem] bg-[var(--color-accent)] text-black py-[0.55rem] px-[1.4rem] rounded-full no-underline font-medium tracking-[0.04em] transition-all duration-200 hover:opacity-85 hover:scale-97"
