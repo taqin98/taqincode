@@ -8,47 +8,47 @@ export default function Projects() {
   const projects = [
     {
       featured: true,
-      type: "● Featured · ERP System",
-      title: "ERP Inventory & Operations System",
-      desc: "A multi-module Laravel system for managing operational workflows: inventory tracking, purchase orders, sales reports, employee management, and role-based access control. Built with a relational MySQL schema and clean CRUD flows for daily business use.",
+      type: t('proj.type.1'),
+      title: t('proj.title.1'),
+      desc: t('proj.desc.1'),
       stack: ["Laravel", "PHP", "MySQL", "Blade", "Bootstrap", "GitHub Actions"],
       actions: [
-        { label: "Request Case Study", href: "#contact", primary: true },
-        { label: "GitHub", href: "https://github.com/taqin98", primary: false },
+        { label: t('proj.act.1.1'), href: "#contact", primary: true },
+        { label: t('proj.act.1.2'), href: "https://github.com/taqin98", primary: false },
       ],
       visual: "🏗️",
     },
     {
       featured: false,
-      type: "● Next.js · Deployed on Vercel",
-      title: "Marketing Landing Pages",
-      desc: "High-conversion, animated landing pages for startups and businesses. Fully responsive, optimized for Core Web Vitals, with smooth scroll animations and Vercel edge deployment. From brief to live in hours.",
+      type: t('proj.type.2'),
+      title: t('proj.title.2'),
+      desc: t('proj.desc.2'),
       stack: ["Next.js", "Tailwind CSS", "Framer Motion", "Vercel"],
       actions: [
-        { label: "Discuss Similar Project", href: "#contact", primary: true },
-        { label: "GitHub", href: "https://github.com/taqin98", primary: false },
+        { label: t('proj.act.2.1'), href: "#contact", primary: true },
+        { label: t('proj.act.2.2'), href: "https://github.com/taqin98", primary: false },
       ],
     },
     {
       featured: false,
-      type: "● React · Component Library",
-      title: "Reusable React Components",
-      desc: "Custom React component library — modals, data tables, form builders, and dashboard widgets. Documented, modular, and ready to drop into any project with consistent design tokens.",
+      type: t('proj.type.3'),
+      title: t('proj.title.3'),
+      desc: t('proj.desc.3'),
       stack: ["React", "JavaScript", "CSS Modules", "GitHub"],
       actions: [
-        { label: "View Components", href: "#contact", primary: true },
-        { label: "GitHub", href: "https://github.com/taqin98", primary: false },
+        { label: t('proj.act.3.1'), href: "#contact", primary: true },
+        { label: t('proj.act.3.2'), href: "https://github.com/taqin98", primary: false },
       ],
     },
     {
       featured: false,
-      type: "● Node.js · REST API · Fullstack",
-      title: "Small Fullstack Web Apps",
-      desc: "End-to-end fullstack projects — Node.js / Express API with a React frontend, JWT authentication, MySQL database, CRUD operations, and Vercel deployment. Clean architecture, ready to scale.",
+      type: t('proj.type.4'),
+      title: t('proj.title.4'),
+      desc: t('proj.desc.4'),
       stack: ["Node.js", "Express", "React", "MySQL", "Vercel"],
       actions: [
-        { label: "Plan an MVP", href: "#contact", primary: true },
-        { label: "GitHub", href: "https://github.com/taqin98", primary: false },
+        { label: t('proj.act.4.1'), href: "#contact", primary: true },
+        { label: t('proj.act.4.2'), href: "https://github.com/taqin98", primary: false },
       ],
     },
   ];
@@ -60,12 +60,12 @@ export default function Projects() {
     >
       <div className="mb-[3.5rem] reveal">
         <div className="font-mono text-[0.68rem] text-[var(--color-accent)] tracking-[0.18em] uppercase mb-[0.75rem]">
-          — Projects
+          {t('proj.title')}
         </div>
         <h2 className="font-serif text-[clamp(2.2rem,3.8vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.025em]">
-          Things I&apos;ve{" "}
+          {t('proj.heading.1')}{" "}
           <em className="italic text-[var(--color-accent)] font-light">
-            built
+            {t('proj.heading.2')}
           </em>
         </h2>
       </div>

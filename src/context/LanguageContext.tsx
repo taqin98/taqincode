@@ -70,15 +70,32 @@ const translations: Record<Language, Record<string, string>> = {
     "skills.lvl.intermediate": "Intermediate",
 
     // Projects
-    "proj.title": "— Selected Projects",
-    "proj.heading.1": "Practical ",
-    "proj.heading.2": "solutions.",
-    "proj.view_live": "Live Site ↗",
-    "proj.view_github": "GitHub ↗",
-    "proj.private": "Private Repo / Demo available upon request",
-    "proj.1.desc": "Complete landing page, sales funnel, and checkout system built with Next.js, integrating direct payments for a local digital business.",
-    "proj.2.desc": "Internal ERP system for tracking production, raw materials, inventory, and automated reporting. Replaced scattered spreadsheets with a unified system.",
-    "proj.3.desc": "Dynamic inventory management and sales dashboard built for local retail, ensuring real-time stock synchronization and easy checkout.",
+    "proj.title": "— Projects",
+    "proj.heading.1": "Things I've",
+    "proj.heading.2": "built",
+    "proj.type.1": "● Featured · ERP System",
+    "proj.title.1": "ERP Inventory & Operations System",
+    "proj.desc.1": "A multi-module Laravel system for managing operational workflows: inventory tracking, purchase orders, sales reports, employee management, and role-based access control. Built with a relational MySQL schema and clean CRUD flows for daily business use.",
+    "proj.act.1.1": "Request Case Study",
+    "proj.act.1.2": "GitHub",
+
+    "proj.type.2": "● Next.js · Deployed on Vercel",
+    "proj.title.2": "Marketing Landing Pages",
+    "proj.desc.2": "High-conversion, animated landing pages for startups and businesses. Fully responsive, optimized for Core Web Vitals, with smooth scroll animations and Vercel edge deployment. From brief to live in hours.",
+    "proj.act.2.1": "Discuss Similar Project",
+    "proj.act.2.2": "GitHub",
+
+    "proj.type.3": "● React · Component Library",
+    "proj.title.3": "Reusable React Components",
+    "proj.desc.3": "Custom React component library — modals, data tables, form builders, and dashboard widgets. Documented, modular, and ready to drop into any project with consistent design tokens.",
+    "proj.act.3.1": "View Components",
+    "proj.act.3.2": "GitHub",
+
+    "proj.type.4": "● Node.js · REST API · Fullstack",
+    "proj.title.4": "Small Fullstack Web Apps",
+    "proj.desc.4": "End-to-end fullstack projects — Node.js / Express API with a React frontend, JWT authentication, MySQL database, CRUD operations, and Vercel deployment. Clean architecture, ready to scale.",
+    "proj.act.4.1": "Plan an MVP",
+    "proj.act.4.2": "GitHub",
 
     // Services
     "svc.title": "— Services",
@@ -170,15 +187,32 @@ const translations: Record<Language, Record<string, string>> = {
     "skills.lvl.intermediate": "Menengah",
 
     // Projects
-    "proj.title": "— Proyek Pilihan",
-    "proj.heading.1": "Solusi ",
-    "proj.heading.2": "praktis.",
-    "proj.view_live": "Situs Langsung ↗",
-    "proj.view_github": "GitHub ↗",
-    "proj.private": "Repo Privat / Demo tersedia atas permintaan",
-    "proj.1.desc": "Landing page lengkap, sales funnel, dan sistem checkout yang dibangun dengan Next.js, mengintegrasikan pembayaran langsung untuk bisnis digital lokal.",
-    "proj.2.desc": "Sistem ERP internal untuk melacak produksi, bahan baku, inventaris, dan pelaporan otomatis. Menggantikan spreadsheet yang tersebar dengan sistem terpadu.",
-    "proj.3.desc": "Manajemen inventaris dinamis dan dashboard penjualan yang dibangun untuk ritel lokal, memastikan sinkronisasi stok real-time dan checkout yang mudah.",
+    "proj.title": "— Proyek",
+    "proj.heading.1": "Yang telah saya",
+    "proj.heading.2": "bangun",
+    "proj.type.1": "● Unggulan · Sistem ERP",
+    "proj.title.1": "Sistem Inventaris & Operasional ERP",
+    "proj.desc.1": "Sistem Laravel multi-modul untuk mengelola alur kerja operasional: pelacakan inventaris, pesanan pembelian, laporan penjualan, manajemen karyawan, dan kontrol akses berbasis peran. Dibangun dengan skema MySQL relasional dan alur CRUD yang bersih untuk penggunaan bisnis sehari-hari.",
+    "proj.act.1.1": "Minta Studi Kasus",
+    "proj.act.1.2": "GitHub",
+
+    "proj.type.2": "● Next.js · Di-deploy di Vercel",
+    "proj.title.2": "Landing Page Pemasaran",
+    "proj.desc.2": "Landing page beranimasi dengan konversi tinggi untuk startup dan bisnis. Sepenuhnya responsif, dioptimalkan untuk Core Web Vitals, dengan animasi gulir yang mulus dan penerapan Vercel edge. Dari konsep hingga live dalam hitungan jam.",
+    "proj.act.2.1": "Diskusikan Proyek Serupa",
+    "proj.act.2.2": "GitHub",
+
+    "proj.type.3": "● React · Component Library",
+    "proj.title.3": "Komponen React Reusable",
+    "proj.desc.3": "Pustaka komponen React kustom — modal, tabel data, pembuat formulir, dan widget dashboard. Terdokumentasi, modular, dan siap digunakan ke dalam proyek apa pun dengan desain yang konsisten.",
+    "proj.act.3.1": "Lihat Komponen",
+    "proj.act.3.2": "GitHub",
+
+    "proj.type.4": "● Node.js · REST API · Fullstack",
+    "proj.title.4": "Aplikasi Web Fullstack Skala Kecil",
+    "proj.desc.4": "Proyek fullstack ujung-ke-ujung — Node.js / Express API dengan frontend React, autentikasi JWT, database MySQL, operasi CRUD, dan deployment Vercel. Arsitektur bersih, siap untuk diskalakan.",
+    "proj.act.4.1": "Rencanakan MVP",
+    "proj.act.4.2": "GitHub",
 
     // Services
     "svc.title": "— Layanan",
