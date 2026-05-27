@@ -1,6 +1,8 @@
 "use client";
 
 import { useLanguage } from "@/context/LanguageContext";
+import Image from "next/image";
+
 export default function About() {
   const { t } = useLanguage();
   return (
@@ -13,10 +15,21 @@ export default function About() {
       </div>
       <div className="grid grid-cols-[1.3fr_1fr] gap-[6rem] mt-[3.5rem] max-[900px]:grid-cols-1 max-[900px]:gap-[3rem]">
         <div className="flex flex-col">
-          <h2 className="font-serif text-[clamp(2.2rem,3.8vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.025em] reveal">
-            {t('about.heading.1')}<br />
-            <em className="italic text-[var(--color-accent)] font-light">{t('about.heading.2')}</em>
-          </h2>
+          <div className="flex items-center gap-[1.5rem] max-[600px]:flex-col max-[600px]:items-start reveal">
+            <div className="w-[110px] h-[110px] shrink-0 rounded-md overflow-hidden border-2 border-[var(--color-acc-line)] bg-[var(--color-card)] relative">
+              <Image
+                src="/avatar1.png"
+                alt="Profile"
+                fill
+                className="object-cover"
+                sizes="110px"
+              />
+            </div>
+            <h2 className="font-serif text-[clamp(2.2rem,3.8vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.025em]">
+              {t('about.heading.1')}<br />
+              <em className="italic text-[var(--color-accent)] font-light">{t('about.heading.2')}</em>
+            </h2>
+          </div>
           <p className="text-[1rem] text-[var(--color-text2)] leading-[1.85] font-light mb-[1rem] mt-[2rem] reveal">
             {t('about.p1')}
           </p>

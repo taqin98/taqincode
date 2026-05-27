@@ -97,9 +97,9 @@ export default function Hero() {
       <div className="relative z-[2] flex flex-col gap-[1rem] opacity-0 animate-fade-left max-[900px]:hidden" style={{ animationDelay: '0.8s' }}>
         <div className="bg-[var(--color-card)] border border-[var(--color-border-main)] rounded-[14px] py-[1.25rem] px-[1.5rem] min-w-[220px]">
           <div className="flex items-center gap-[1rem]">
-            <div className="shrink-0">
+            {/* <div className="shrink-0">
               <img src="/avatar.png" alt="Avatar" className="w-[48px] h-[48px] rounded-full object-cover border border-[var(--color-border-main)]" />
-            </div>
+            </div> */}
             <div className="flex flex-col">
               <div className="font-mono text-[0.62rem] text-[var(--color-text3)] tracking-[0.1em] uppercase mb-[0.3rem]">
                 {t('hero.card.status')}
