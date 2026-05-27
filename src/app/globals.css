@@ -47,18 +47,18 @@
 }
 
 :root[data-theme='light'] {
-  --color-bg: #fdfbf7;
-  --color-bg2: #f4f0e6;
-  --color-card: #ffffff;
-  --color-border-main: #e5e0d8;
-  --color-border2: #d6cfc4;
-  --color-accent: #df9000;
-  --color-accent2: #f0a500;
-  --color-acc-dim: rgba(223, 144, 0, 0.12);
-  --color-acc-line: rgba(223, 144, 0, 0.3);
-  --color-text-main: #1a1a1a;
-  --color-text2: #5c5c5c;
-  --color-text3: #8a8a8a;
+  --color-bg: #f0e6d2;
+  --color-bg2: #e6dcc6;
+  --color-card: #fdf5e6;
+  --color-border-main: #d9ceb8;
+  --color-border2: #c9beaa;
+  --color-accent: #d68d00;
+  --color-accent2: #e69a00;
+  --color-acc-dim: rgba(214, 141, 0, 0.12);
+  --color-acc-line: rgba(214, 141, 0, 0.3);
+  --color-text-main: #332f28;
+  --color-text2: #6b665c;
+  --color-text3: #9e978b;
   --color-green-custom: #16a34a;
   --background: var(--color-bg);
   --foreground: var(--color-text-main);
