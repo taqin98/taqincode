@@ -11,33 +11,31 @@ export default function Projects() {
       type: t('proj.type.1'),
       title: t('proj.title.1'),
       desc: t('proj.desc.1'),
-      stack: ["Laravel", "PHP", "MySQL", "Blade", "Bootstrap", "GitHub Actions"],
+      stack: ["Laravel","MySQL","Bootstrap","JQuery","Xendit API"],
       actions: [
-        { label: t('proj.act.1.1'), href: "#contact", primary: true },
-        { label: t('proj.act.1.2'), href: "https://github.com/taqin98", primary: false },
+        { label: t('proj.act.1.1'), href: "https://muladiconnect.id", primary: true }
       ],
-      visual: "🏗️",
+      visual: "📡",
     },
     {
-      featured: false,
+      featured: true,
       type: t('proj.type.2'),
       title: t('proj.title.2'),
       desc: t('proj.desc.2'),
-      stack: ["Next.js", "Tailwind CSS", "Framer Motion", "Vercel"],
+      stack: ["Laravel","MySQL","Bootstrap","JQuery","Xendit API"],
       actions: [
-        { label: t('proj.act.2.1'), href: "#contact", primary: true },
-        { label: t('proj.act.2.2'), href: "https://github.com/taqin98", primary: false },
+        { label: t('proj.act.2.1'), href: "https://titanhome.net.id", primary: true }
       ],
+      visual: "🏠",
     },
     {
       featured: false,
       type: t('proj.type.3'),
       title: t('proj.title.3'),
       desc: t('proj.desc.3'),
-      stack: ["React", "JavaScript", "CSS Modules", "GitHub"],
+      stack: ["ReactJs","Bootstrap","API Integration"],
       actions: [
-        { label: t('proj.act.3.1'), href: "#contact", primary: true },
-        { label: t('proj.act.3.2'), href: "https://github.com/taqin98", primary: false },
+        { label: t('proj.act.3.1'), href: "https://nexa.net.id", primary: true }
       ],
     },
     {
@@ -45,12 +43,54 @@ export default function Projects() {
       type: t('proj.type.4'),
       title: t('proj.title.4'),
       desc: t('proj.desc.4'),
-      stack: ["Node.js", "Express", "React", "MySQL", "Vercel"],
+      stack: ["Laravel","MySQL","Bootstrap","JQuery"],
       actions: [
-        { label: t('proj.act.4.1'), href: "#contact", primary: true },
-        { label: t('proj.act.4.2'), href: "https://github.com/taqin98", primary: false },
+        { label: t('proj.act.4.1'), href: "https://taqincode.vercel.app/projects/kla_preview.png", primary: true }
       ],
     },
+    {
+      featured: false,
+      type: t('proj.type.5'),
+      title: t('proj.title.5'),
+      desc: t('proj.desc.5'),
+      stack: ["Lumen","MySQL","Bootstrap","JQuery"],
+      actions: [
+        { label: t('proj.act.5.1'), href: "https://festivedraw.nexa.net.id", primary: true }
+      ],
+    },
+    {
+      featured: true,
+      type: t('proj.type.6'),
+      title: t('proj.title.6'),
+      desc: t('proj.desc.6'),
+      stack: ["JavaScript","AR.js","Node.js","Vercel Serverless","OpenRouter API"],
+      actions: [
+        { label: t('proj.act.6.1'), href: "https://taqin98.github.io/toga-tanaman", primary: true },
+        { label: t('proj.act.6.2'), href: "https://vercel-ai-backend-ten.vercel.app", primary: false }
+      ],
+      visual: "🌿",
+    },
+    {
+      featured: false,
+      type: t('proj.type.7'),
+      title: t('proj.title.7'),
+      desc: t('proj.desc.7'),
+      stack: ["Next.js 15","React 19","TypeScript","Tailwind CSS","Google Apps Script"],
+      actions: [
+        { label: t('proj.act.7.1'), href: "https://anzafashion.vercel.app", primary: true }
+      ],
+    },
+    {
+      featured: true,
+      type: t('proj.type.8'),
+      title: t('proj.title.8'),
+      desc: t('proj.desc.8'),
+      stack: ["Laravel","MySQL","Bootstrap","jQuery","MinIO","Job Queue"],
+      actions: [
+        { label: t('proj.act.8.1'), href: "https://taqincode.vercel.app/projects/compliance_preview.png", primary: true }
+      ],
+      visual: "📑",
+    }
   ];
 
   return (
@@ -76,23 +116,37 @@ export default function Projects() {
             key={idx}
             className={`reveal proj-card bg-[var(--color-card)] border border-[var(--color-border-main)] rounded-[16px] p-[2rem] relative overflow-hidden transition-all duration-300 hover:border-[rgba(240,165,0,0.2)] hover:-translate-y-[5px] hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)]
               after:content-[''] after:absolute after:top-0 after:left-0 after:right-0 after:h-[2px] after:bg-gradient-to-r after:from-[var(--color-accent)] after:to-[var(--color-accent2)] after:scale-x-0 after:origin-left after:transition-transform after:duration-[0.35s] hover:after:scale-x-100
-              ${proj.featured
-                ? "col-span-2 grid grid-cols-[1fr_300px] gap-[2.5rem] items-center max-[900px]:col-span-1 max-[900px]:grid-cols-1"
-                : ""
-              }
+              flex flex-col h-full
             `}
           >
-            <div>
+            <div className="flex flex-col h-full">
               <div className="font-mono text-[0.66rem] text-[var(--color-accent)] tracking-[0.12em] uppercase mb-[1rem]">
                 {proj.type}
               </div>
-              <h3 className="font-serif text-[1.5rem] font-bold tracking-[-0.02em] mb-[0.75rem] leading-[1.2]">
+              <h3 className="font-serif text-[1.5rem] font-bold tracking-[-0.02em] mb-[1rem] leading-[1.2]">
                 {proj.title}
               </h3>
-              <p className="text-[var(--color-text2)] text-[0.88rem] leading-[1.75] font-light mb-[1.5rem]">
-                {proj.desc}
-              </p>
-              <div className="flex flex-wrap gap-[0.4rem]">
+              
+              <div className="text-[var(--color-text2)] text-[0.88rem] leading-[1.75] font-light mb-[1.5rem] flex-1">
+                {proj.desc.split('\n').map((line, i) => {
+                  const trimmed = line.trim();
+                  if (!trimmed) return null;
+                  if (trimmed.startsWith('•')) {
+                    return (
+                      <div key={i} className="flex gap-[0.5rem] mb-[0.25rem]">
+                        <span className="text-[var(--color-accent)] opacity-80 mt-[2px] text-[0.7rem]">●</span>
+                        <span className="flex-1">{trimmed.substring(1).trim()}</span>
+                      </div>
+                    );
+                  }
+                  if (trimmed.toLowerCase().includes('jobdesk:') || trimmed.toLowerCase().includes('responsibilities:')) {
+                     return <div key={i} className="font-medium text-[var(--color-text-main)] mt-[1.2rem] mb-[0.5rem]">{trimmed}</div>;
+                  }
+                  return <p key={i} className="mb-[0.5rem]">{trimmed}</p>;
+                })}
+              </div>
+
+              <div className="flex flex-wrap gap-[0.4rem] mt-[1rem]">
                 {proj.stack.map((s) => (
                   <span
                     key={s}
@@ -133,21 +187,6 @@ export default function Projects() {
               </div>
             </div>
 
-            {proj.featured && (
-              <div
-                className="bg-[linear-gradient(135deg,rgba(240,165,0,0.08)_0%,rgba(240,165,0,0.02)_100%)] border border-[rgba(240,165,0,0.15)] rounded-[12px] h-[220px] flex items-center justify-center text-[5rem] relative overflow-hidden max-[900px]:hidden"
-              >
-                <div
-                  className="absolute inset-0 pointer-events-none"
-                  style={{
-                    backgroundImage:
-                      "linear-gradient(to right, rgba(240,165,0,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(240,165,0,0.06) 1px, transparent 1px)",
-                    backgroundSize: "30px 30px",
-                  }}
-                ></div>
-                {proj.visual}
-              </div>
-            )}
           </div>
         ))}
       </div>
