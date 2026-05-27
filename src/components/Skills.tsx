@@ -1,21 +1,26 @@
 "use client";
 
 import { useLanguage } from "@/context/LanguageContext";
+import { FaReact, FaHtml5, FaPhp, FaLaravel, FaNodeJs, FaGithub } from "react-icons/fa";
+import { SiNextdotjs, SiJavascript, SiMysql, SiVercel, SiTailwindcss } from "react-icons/si";
+import { TbApi } from "react-icons/tb";
+import { FaCss3Alt } from "react-icons/fa6";
+
 export default function Skills() {
   const { t } = useLanguage();
   const stackData = [
-    { icon: "⚛️", name: "React", lvl: t('skills.lvl.proficient') },
-    { icon: "▲", name: "Next.js", lvl: t('skills.lvl.proficient') },
-    { icon: "🟨", name: "JavaScript", lvl: t('skills.lvl.proficient') },
-    { icon: "🌐", name: "HTML & CSS", lvl: t('skills.lvl.proficient') },
-    { icon: "🐘", name: "PHP", lvl: t('skills.lvl.proficient') },
-    { icon: "🔴", name: "Laravel", lvl: t('skills.lvl.proficient') },
-    { icon: "🟢", name: "Node.js", lvl: t('skills.lvl.intermediate') },
-    { icon: "🗄️", name: "MySQL", lvl: t('skills.lvl.proficient') },
-    { icon: "🐙", name: "Git & GitHub", lvl: t('skills.lvl.proficient') },
-    { icon: "🚀", name: "Vercel", lvl: t('skills.lvl.proficient') },
-    { icon: "💨", name: "Tailwind CSS", lvl: t('skills.lvl.proficient') },
-    { icon: "📦", name: "REST API", lvl: t('skills.lvl.intermediate') },
+    { icon: <FaReact color="#61DAFB" />, name: "React", lvl: t('skills.lvl.proficient') },
+    { icon: <SiNextdotjs />, name: "Next.js", lvl: t('skills.lvl.proficient') },
+    { icon: <SiJavascript color="#F7DF1E" />, name: "JavaScript", lvl: t('skills.lvl.proficient') },
+    { icon: <div className="flex gap-1"><FaHtml5 color="#E34F26" /><FaCss3Alt color="#1572B6" /></div>, name: "HTML & CSS", lvl: t('skills.lvl.proficient') },
+    { icon: <FaPhp color="#777BB4" />, name: "PHP", lvl: t('skills.lvl.proficient') },
+    { icon: <FaLaravel color="#FF2D20" />, name: "Laravel", lvl: t('skills.lvl.proficient') },
+    { icon: <FaNodeJs color="#339933" />, name: "Node.js", lvl: t('skills.lvl.intermediate') },
+    { icon: <SiMysql color="#4479A1" />, name: "MySQL", lvl: t('skills.lvl.proficient') },
+    { icon: <FaGithub />, name: "Git & GitHub", lvl: t('skills.lvl.proficient') },
+    { icon: <SiVercel />, name: "Vercel", lvl: t('skills.lvl.proficient') },
+    { icon: <SiTailwindcss color="#06B6D4" />, name: "Tailwind CSS", lvl: t('skills.lvl.proficient') },
+    { icon: <TbApi color="#8a8a8a" />, name: "REST API", lvl: t('skills.lvl.intermediate') },
   ];
 
   return (
