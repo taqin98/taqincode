@@ -8,7 +8,7 @@ import * as THREE from "three";
 export default function Hero() {
   const { t, lang } = useLanguage();
   const [vantaEffect, setVantaEffect] = useState<any>(null);
-  const vantaRef = useRef<HTMLElement>(null);
+  const vantaRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!vantaEffect && typeof window !== "undefined") {
