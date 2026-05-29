@@ -15,7 +15,7 @@ export default function About() {
       </div>
       <div className="grid grid-cols-[1.3fr_1fr] gap-[6rem] mt-[3.5rem] max-[900px]:grid-cols-1 max-[900px]:gap-[3rem]">
         <div className="flex flex-col">
-          <div className="flex items-center gap-[1.5rem] max-[600px]:flex-col max-[600px]:items-start reveal">
+          <div className="flex items-center gap-[1.5rem] reveal">
             <div className="w-[110px] h-[110px] shrink-0 rounded-md overflow-hidden border-2 border-[var(--color-acc-line)] bg-[var(--color-card)] relative">
               <Image
                 src="/avatar1.png"
