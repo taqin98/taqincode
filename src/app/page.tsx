@@ -22,17 +22,23 @@ export default function Home() {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0, rootMargin: "50px" }
     );
     document.querySelectorAll(".reveal").forEach((r) => obs.observe(r));
 
+    // Fallback for Safari 15 bug where IntersectionObserver fails
+    const fallbackTimer = setTimeout(() => {
+      document.querySelectorAll(".reveal:not(.visible)").forEach(r => r.classList.add("visible"));
+    }, 1500);
+
     return () => {
       obs.disconnect();
+      clearTimeout(fallbackTimer);
     };
   }, []);
 
   return (
-    <>
+    <div className="overflow-x-hidden">
       <Navbar />
       <Hero />
       <Ticker />
@@ -42,6 +48,6 @@ export default function Home() {
       <Services />
       <Contact />
       <Footer />
-    </>
+    </div>
   );
 }

@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import { useEffect, useRef, useState } from "react";
-import * as THREE from "three";
 
 export default function Hero() {
   const { t, lang } = useLanguage();
@@ -20,6 +19,7 @@ export default function Hero() {
           const vantaColor = accentHex ? parseInt(accentHex, 16) : 0xf0a500;
           const vantaBg = bgHex ? parseInt(bgHex, 16) : 0x08090e;
 
+          const THREE = await import("three");
           // @ts-expect-error Vanta does not have types
           const NET = (await import("vanta/dist/vanta.net.min")).default;
           setVantaEffect(

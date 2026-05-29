@@ -6,6 +6,7 @@ export default function CustomCursor() {
   const [canUseCustomCursor, setCanUseCustomCursor] = useState(false);
 
   useEffect(() => {
+    // Only enable on devices that have a fine pointer (e.g. mouse, not touch)
     const isHoverable = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
     setCanUseCustomCursor(isHoverable);
   }, []);
@@ -17,7 +18,13 @@ export default function CustomCursor() {
     const curRing = document.getElementById("curRing");
     if (!cur || !curRing) return;
 
+    // Apply class to body to hide default cursor ONLY when this component is active
+    document.body.classList.add("custom-cursor-active");
+
     let mx = 0, my = 0, rx = 0, ry = 0;
+    let isHover = false;
+    let scaleDot = 1;
+    let scaleRing = 1;
     let requestRef: number;
 
     const onMouseMove = (e: MouseEvent) => {
@@ -26,50 +33,49 @@ export default function CustomCursor() {
     };
 
     const animCursor = () => {
-      cur.style.left = mx - 5 + "px";
-      cur.style.top = my - 5 + "px";
-      rx += (mx - rx) * 0.12;
-      ry += (my - ry) * 0.12;
-      curRing.style.left = rx - 18 + "px";
-      curRing.style.top = ry - 18 + "px";
+      // Smooth interpolation for ring position
+      rx += (mx - rx) * 0.15;
+      ry += (my - ry) * 0.15;
+
+      // Smooth interpolation for scale (replaces CSS transitions)
+      const targetScaleDot = isHover ? 0 : 1;
+      const targetScaleRing = isHover ? 1.55 : 1;
+      scaleDot += (targetScaleDot - scaleDot) * 0.2;
+      scaleRing += (targetScaleRing - scaleRing) * 0.2;
+
+      // GPU Accelerated Transforms (No reflows/repaints = Zero lag)
+      cur.style.transform = `translate3d(${mx - 5}px, ${my - 5}px, 0) scale(${scaleDot})`;
+      curRing.style.transform = `translate3d(${rx - 18}px, ${ry - 18}px, 0) scale(${scaleRing})`;
+      
       requestRef = requestAnimationFrame(animCursor);
     };
 
-    document.addEventListener("mousemove", onMouseMove);
+    // Event delegation for highly optimized hover detection
+    const onMouseOver = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.closest("a, button, .skill-card, .proj-card, .svc-card")) {
+        isHover = true;
+      } else {
+        isHover = false;
+      }
+    };
+
+    document.addEventListener("mousemove", onMouseMove, { passive: true });
+    document.addEventListener("mouseover", onMouseOver, { passive: true });
+    
+    // Initial position fix to prevent flying in from top-left
+    setTimeout(() => {
+      rx = mx;
+      ry = my;
+    }, 50);
+
     requestRef = requestAnimationFrame(animCursor);
 
-    const onMouseEnter = () => {
-      cur.classList.add("hover");
-      curRing.classList.add("hover");
-    };
-
-    const onMouseLeave = () => {
-      cur.classList.remove("hover");
-      curRing.classList.remove("hover");
-    };
-
-    const addHoverListeners = () => {
-      document.querySelectorAll("a, button, .skill-card, .proj-card, .svc-card").forEach((el) => {
-        el.addEventListener("mouseenter", onMouseEnter);
-        el.addEventListener("mouseleave", onMouseLeave);
-      });
-    };
-
-    // Use a mutation observer or interval if elements are dynamic,
-    // or just call it after a short delay for static elements.
-    const observer = new MutationObserver((mutations) => {
-      addHoverListeners();
-    });
-
-    observer.observe(document.body, { childList: true, subtree: true });
-    addHoverListeners();
-
     return () => {
+      document.body.classList.remove("custom-cursor-active");
       document.removeEventListener("mousemove", onMouseMove);
+      document.removeEventListener("mouseover", onMouseOver);
       cancelAnimationFrame(requestRef);
-      observer.disconnect();
-      // To be completely clean, we should remove event listeners from individual elements,
-      // but since they are attached directly, observer handles new ones.
     };
   }, [canUseCustomCursor]);
 
@@ -77,8 +83,8 @@ export default function CustomCursor() {
 
   return (
     <>
-      <div className="cursor" id="cur"></div>
-      <div className="cursor-ring" id="curRing"></div>
+      <div className="cursor" id="cur" style={{ top: 0, left: 0 }}></div>
+      <div className="cursor-ring" id="curRing" style={{ top: 0, left: 0 }}></div>
     </>
   );
 }
